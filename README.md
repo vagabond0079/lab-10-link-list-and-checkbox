@@ -14,7 +14,7 @@
   * write a question and observation on canvas
 
 ## Description
-## Data Structure challenge
+#### Data Structure challenge
   * write at least three tests for each method that you've written
   * complete the Linked List data structure by adding a `remove(node)` method
   * implement `reverse()` as a method on the Linked List prototype; from your whiteboard exercise
