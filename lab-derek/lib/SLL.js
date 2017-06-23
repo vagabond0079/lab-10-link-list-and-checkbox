@@ -34,13 +34,28 @@ module.exports = class SLL{
     }
     return slow;
   }
+
+  //TODO: complete the Linked List data structure by adding a remove(node) method
+  removeNode(value){
+    let current = this;
+    while(current.next.value !== value){
+      current = current.next;
+    }
+    current.next = current.next.next;
+    console.log(this);
+
+    // this.next =
+    //   {
+    //     value: 1,
+    //     next: null,
+    //   };
+  }
 };
 
 
 
 
 //TODO: write at least three tests for each method that you've written
-//TODO: complete the Linked List data structure by adding a remove(node) method
 //TODO: implement reverse() as a method on the Linked List prototype; from your whiteboard exercise
 //TODO: in comments above or within each function, note the Big-O runtime
 

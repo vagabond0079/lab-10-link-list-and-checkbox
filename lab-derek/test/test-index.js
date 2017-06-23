@@ -58,3 +58,45 @@ describe('fromMiddle method', () => {
     done();
   });
 });
+
+describe('removeNode', () => {
+  it('should remove the first node with specified value', (done) => {
+    let testHead = new SLL(0);
+    let testNode1 = new SLL(1);
+    let testNode2 = new SLL(2);
+    testHead.appendNode(testNode1);
+    testHead.appendNode(testNode2);
+    testHead.removeNode(2);
+    expect(testHead.next.next).toEqual(null);
+    done();
+  });
+  it('should remove the first node with specified value', (done) => {
+    let testHead = new SLL(0);
+    let testNode1 = new SLL(1);
+    let testNode2 = new SLL(2);
+    let testNode3 = new SLL(3);
+    let testNode4 = new SLL(4);
+    testHead.appendNode(testNode1);
+    testHead.appendNode(testNode2);
+    testHead.appendNode(testNode3);
+    testHead.appendNode(testNode4);
+    testHead.removeNode(2);
+    expect(testHead.next.next.value).toEqual(3);
+    done();
+  });
+  it('should remove multiple nodes', (done) => {
+    let testHead = new SLL(0);
+    let testNode1 = new SLL(1);
+    let testNode2 = new SLL(2);
+    let testNode3 = new SLL(3);
+    let testNode4 = new SLL(4);
+    testHead.appendNode(testNode1);
+    testHead.appendNode(testNode2);
+    testHead.appendNode(testNode3);
+    testHead.appendNode(testNode4);
+    testHead.removeNode(2);
+    testHead.removeNode(3);
+    expect(testHead.next.next.value).toEqual(4);
+    done();
+  });
+});
