@@ -24,6 +24,16 @@ module.exports = class SLL{
       current = current.next;
     }
   }
+
+  fromMiddle(){
+    let slow = this;
+    let fast = this;
+    while(fast.next){
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow;
+  }
 };
 
 
