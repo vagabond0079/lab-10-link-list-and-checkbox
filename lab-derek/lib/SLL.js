@@ -38,18 +38,34 @@ module.exports = class SLL{
   //TODO: complete the Linked List data structure by adding a remove(node) method
   removeNode(value){
     let current = this;
-    while(current.next.value !== value){
+    while(current.value !== value){
       current = current.next;
     }
     current.next = current.next.next;
     console.log(this);
-
-    // this.next =
-    //   {
-    //     value: 1,
-    //     next: null,
-    //   };
   }
+
+  // reverse(){
+  //   let current = this;
+  //   let newOrder = new SLL();
+  //   while(this.next){
+  //     while(current.next){
+  //     current = current.next;
+  //   }
+  //   newOrder.value = current.value;
+  //   newOrder.next = current.next;
+  //   current.next = null;
+  //   }
+  //   newOrder;
+  // }
+    //
+//     this.value = 1;
+//     this.next =
+//       {
+//         value: 0,
+//         next: null,
+//       };
+//   }
 };
 
 
