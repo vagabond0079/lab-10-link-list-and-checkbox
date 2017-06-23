@@ -1,0 +1,45 @@
+*{
+  width: 100%;
+  /*border: 1px dotted red;*/
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.sliding-checkbox{
+  height: 1em;
+  width: 3em;
+}
+
+.sliding-checkbox *{
+  transition: 250ms;
+}
+
+.sliding-checkbox label{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+  padding-top: .1em;
+  padding-left: .1em;
+  border-radius: 2em;
+}
+
+.sliding-checkbox input:checked + label{
+  background-color: forestgreen;
+  padding-left: 2em;
+}
+
+.slider-inner{
+  height: .8em;
+  width: .8em;
+  background: white;
+  border-radius: 5em;
+}
