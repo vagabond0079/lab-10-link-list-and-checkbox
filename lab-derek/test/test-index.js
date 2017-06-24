@@ -100,3 +100,28 @@ describe('removeNode', () => {
     done();
   });
 });
+
+describe('reverse', () => {
+  it('should reverse the order of the nodes', (done) => {
+    let testHead = new SLL(0);
+    let testNode1 = new SLL(1);
+    testHead.appendNode(testNode1);
+    testHead.reverse();
+    expect(testNode1.next.value).toEqual(0);
+    expect(testHead.next).toEqual(null);
+    done();
+  });
+  it('should reverse the order of the nodes', (done) => {
+    let testHead = new SLL(0);
+    let testNode1 = new SLL(1);
+    let testNode2 = new SLL(2);
+    let testNode3 = new SLL(3);
+    testHead.appendNode(testNode1);
+    testHead.appendNode(testNode2);
+    testHead.appendNode(testNode3);
+    testHead.reverse();
+    expect(testNode3.next.value).toEqual(2);
+    expect(testHead.next).toEqual(null);
+    done();
+  });
+});

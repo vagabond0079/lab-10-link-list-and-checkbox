@@ -7,6 +7,7 @@ module.exports = class SLL{
   }
 
   appendNode(node){
+  //O(n)
     if(!(node instanceof SLL)){
       return null;
     }
@@ -18,6 +19,7 @@ module.exports = class SLL{
   }
 
   forEach(callback){
+  //O(n)
     let current = this;
     while (current){
       callback(current, this);
@@ -26,6 +28,7 @@ module.exports = class SLL{
   }
 
   fromMiddle(){
+  //O(n)
     let slow = this;
     let fast = this;
     while(fast.next){
@@ -36,43 +39,36 @@ module.exports = class SLL{
   }
 
   //TODO: complete the Linked List data structure by adding a remove(node) method
+
+  //This does not remove the head node...
+  //O(n)
   removeNode(value){
     let current = this;
-    while(current.value !== value){
+    while(current.next.value !== value){
       current = current.next;
     }
     current.next = current.next.next;
-    console.log(this);
   }
 
-  // reverse(){
-  //   let current = this;
-  //   let newOrder = new SLL();
-  //   while(this.next){
-  //     while(current.next){
-  //     current = current.next;
-  //   }
-  //   newOrder.value = current.value;
-  //   newOrder.next = current.next;
-  //   current.next = null;
-  //   }
-  //   newOrder;
-  // }
-    //
-//     this.value = 1;
-//     this.next =
-//       {
-//         value: 0,
-//         next: null,
-//       };
-//   }
+//TODO: implement reverse() as a method on the Linked List prototype; from your whiteboard exercise
+
+//O(n)
+  reverse(){
+    let current = this;
+    let previous = null;
+
+    while(current){
+      let save = current.next;
+      current.next = previous;
+      previous = current;
+      current = save;
+    }
+    return previous;
+  }
 };
 
-
-
-
 //TODO: write at least three tests for each method that you've written
-//TODO: implement reverse() as a method on the Linked List prototype; from your whiteboard exercise
+
 //TODO: in comments above or within each function, note the Big-O runtime
 
 //BONUS TODO: implement findNthNode() as a method on the LL prototype
