@@ -27,7 +27,9 @@ module.exports = class SLL{
     }
   }
 
-  fromMiddle(){
+  //BONUS TODO: implement findMiddleNode() as a method on the LL prototype
+
+  findMiddleNode(){
   //O(n)
     let slow = this;
     let fast = this;
@@ -65,11 +67,24 @@ module.exports = class SLL{
     }
     return previous;
   }
+
+//BONUS TODO: implement findNthNode() as a method on the LL prototype
+
+  findNthNode(n){
+    let current = this;
+    for(let i=0; i<n; i++){
+      current = current.next;
+    }
+    return current;
+  }
 };
 
 //TODO: write at least three tests for each method that you've written
 
 //TODO: in comments above or within each function, note the Big-O runtime
 
-//BONUS TODO: implement findNthNode() as a method on the LL prototype
-//BONUS TODO: implement findMiddleNode() as a method on the LL prototype
+
+
+Whiteboard Challenge:
+
+SLL's.
